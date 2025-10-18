@@ -8,12 +8,9 @@ app.use(cors());
 app.use(express.json());
 
 // In-memory database (replace with actual database in production)
-let students = [
-  { id: 1, name: 'John Doe', email: 'john@example.com', age: 20, course: 'Computer Science' },
-  { id: 2, name: 'Jane Smith', email: 'jane@example.com', age: 22, course: 'Engineering' }
-];
+let students = [];
 
-let nextId = 3;
+let nextId = 1;
 
 // POST /students - Add student
 app.post('/students', (req, res) => {
