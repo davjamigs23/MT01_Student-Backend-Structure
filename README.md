@@ -1,15 +1,15 @@
-# Student Management System
+# Student Management System - Backend API
 
-A full-stack CRUD application for managing student records with a modern React frontend and Express.js backend.
+A RESTful API backend for managing student records built with Express.js.
 
 ## 🚀 Features
 
-- ✅ **Create** - Add new students
-- 📋 **Read** - View all students and individual student details
-- ✏️ **Update** - Edit student information
-- 🗑️ **Delete** - Remove students from the system
-- 🔍 **Search** - Filter students by name, email, or course
-- 🎨 **Modern UI** - Beautiful, responsive design with TailwindCSS
+- ✅ **Create** - Add new students via POST endpoint
+- 📋 **Read** - Get all students or individual student by ID
+- ✏️ **Update** - Edit student information via PUT endpoint
+- 🗑️ **Delete** - Remove students via DELETE endpoint
+- 🔒 **CORS Enabled** - Ready for frontend integration
+- ⚡ **In-Memory Storage** - Fast data access (can be replaced with database)
 
 ## 📁 Project Structure
 
@@ -17,32 +17,17 @@ A full-stack CRUD application for managing student records with a modern React f
 MT01_Student-Backend-Structure/
 ├── backend/
 │   ├── server.js          # Express API server
-│   └── package.json       # Backend dependencies
-├── frontend/
-│   ├── public/
-│   │   └── index.html
-│   ├── src/
-│   │   ├── App.js         # Main React component
-│   │   ├── index.js       # React entry point
-│   │   └── index.css      # Global styles with Tailwind
-│   ├── package.json       # Frontend dependencies
-│   ├── tailwind.config.js # Tailwind configuration
-│   └── postcss.config.js  # PostCSS configuration
+│   ├── package.json       # Backend dependencies
+│   └── .env.example       # Environment variables template
+├── .gitignore
 └── README.md
 ```
 
 ## 🛠️ Tech Stack
 
-### Backend
 - **Node.js** - Runtime environment
 - **Express.js** - Web framework
 - **CORS** - Cross-origin resource sharing
-
-### Frontend
-- **React** - UI library
-- **TailwindCSS** - Utility-first CSS framework
-- **Axios** - HTTP client
-- **Lucide React** - Icon library
 
 ## 📦 Installation
 
@@ -50,7 +35,7 @@ MT01_Student-Backend-Structure/
 - Node.js (v14 or higher)
 - npm or yarn
 
-### Backend Setup
+### Setup
 
 1. Navigate to the backend directory:
 ```bash
@@ -73,25 +58,6 @@ For development with auto-reload:
 ```bash
 npm run dev
 ```
-
-### Frontend Setup
-
-1. Navigate to the frontend directory:
-```bash
-cd frontend
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm start
-```
-
-The frontend will run on `http://localhost:3000`
 
 ## 🔌 API Endpoints
 
@@ -150,22 +116,23 @@ The frontend will run on `http://localhost:3000`
 
 ## 🎯 Usage
 
-1. **Start the backend server** (must be running on port 5000)
-2. **Start the frontend application** (will open on port 3000)
-3. **Add students** using the "Add Student" button
-4. **Search students** using the search bar
-5. **Edit students** by clicking the edit icon on any student card
-6. **Delete students** by clicking the trash icon
+1. **Start the backend server**:
+```bash
+cd backend
+npm start
+```
+
+2. **Test the API** using Postman, cURL, or any HTTP client
+
+3. The server will be running on `http://localhost:5000`
 
 ## 🔧 Configuration
 
 ### Backend Port
-To change the backend port, modify the `PORT` variable in `backend/server.js` or set the `PORT` environment variable.
+To change the backend port, modify the `PORT` variable in `backend/server.js` or set the `PORT` environment variable:
 
-### API URL
-If you change the backend port, update the `API_URL` in `frontend/src/App.js`:
-```javascript
-const API_URL = 'http://localhost:YOUR_PORT';
+```bash
+PORT=3000 npm start
 ```
 
 ## 📝 Notes
@@ -179,12 +146,13 @@ const API_URL = 'http://localhost:YOUR_PORT';
 ## 🚀 Future Enhancements
 
 - [ ] Database integration (MongoDB/PostgreSQL)
-- [ ] User authentication
+- [ ] User authentication & JWT tokens
 - [ ] Pagination for large datasets
-- [ ] Export data to CSV/Excel
-- [ ] Student profile pictures
-- [ ] Advanced filtering and sorting
-- [ ] Email notifications
+- [ ] Input validation with express-validator
+- [ ] Rate limiting
+- [ ] API documentation with Swagger
+- [ ] Unit and integration tests
+- [ ] Logging with Winston or Morgan
 
 ## 📄 License
 
